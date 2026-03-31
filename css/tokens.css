@@ -13,14 +13,35 @@
   --color-dark-gray: rgb(17, 17, 17);
   --color-gray: rgb(107, 107, 107);
   --color-white: rgb(255, 255, 255);
-  /* line-height */
+  /* Typography */
   --line-height: 150%;
   --letter-spacing: 0px;
-  --font-size-big: 24px;
-  --font-size-medium: 16px;
-  --font-size-regular: 14px;
   --font-weight-extra-bold: 800;
   --font-weight-medium: 500;
   /* Shadow Effects */
   --card-shadow: 8px 8px 0px 0px rgb(0, 0, 0);
+  /* card-width range used for fluid type */
+  --card-fluid-min-width: 327px; /* Where the scaling starts */
+  --card-fluid-max-width: 384px; /* Where the scaling ends */
+  --card-fluid-width-range: calc(
+    var(--card-fluid-max-width) - var(--card-fluid-min-width)
+  );
+  /* .card has 24px left + 24px right padding */
+  --card-padding-inline: var(--gap-big);
+  --card-border-inline-extra: calc(var(--card-padding-inline) * 2);
+
+  /* font-size tokens */
+  --fs-tag-min: 12px;
+  --fs-tag-max: 14px;
+
+  --fs-date-min: 12px;
+  --fs-date-max: 14px;
+
+  --fs-title-min: 20px;
+  --fs-title-max: 24px;
+
+  --fs-description-min: 14px;
+  --fs-description-max: 16px;
+
+  --fs-author-name: 14px;
 }

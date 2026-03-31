@@ -4,6 +4,9 @@
 @font-face {
   font-family: "Figtree";
   src: url("./fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
 }
 
 /* Box sizing rules */
@@ -43,15 +46,21 @@ body {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   color: var(--color-dark-gray);
-  height: 100vh;
+  min-height: 100vh;
   background: var(--color-yellow);
+  word-spacing: -0.05em;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
 .card {
   padding: var(--gap-big);
-  margin: auto var(--gap-big);
-  place-content: center;
-  width: min(100%, 384px);
+  margin-inline: auto;
+  width: min(calc(100% - (2 * var(--gap-big))), 384px);
   border-radius: var(--radius-big);
   background: var(--color-white);
   box-shadow: var(--card-shadow);
@@ -61,7 +70,7 @@ body {
   display: block;
   border-radius: var(--radius-medium);
   width: 100%;
-  height: 200px;
+  height: auto;
   margin-bottom: var(--gap-big);
 }
 
@@ -79,24 +88,20 @@ body {
   border-radius: var(--radius-regular);
 
   color: var(--color-dark-gray);
-  font-size: var(--font-size-regular);
   font-weight: var(--font-weight-extra-bold);
 }
 
 .card_date {
   color: var(--color-dark-gray);
-  font-size: var(--font-size-regular);
   font-weight: var(--font-weight-medium);
 }
 
 .card_title {
   font-weight: var(--font-weight-extra-bold);
-  font-size: 24px;
 }
 
 .card_description {
   color: var(--color-gray);
-  font-size: var(--font-size-medium);
   font-weight: var(--font-weight-medium);
 }
 
@@ -106,7 +111,6 @@ body {
   gap: var(--gap-medium);
   align-items: center;
 
-  font-size: var(--font-size-regular);
   font-weight: var(--font-weight-extra-bold);
 }
 
@@ -114,4 +118,70 @@ body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
+}
+
+.attribution {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 11px;
+  width: max-content;
+}
+
+/* ========================================================================= */
+/* Fluid font-size transitions */
+/* ========================================================================= */
+.card {
+  container-type: inline-size;
+}
+
+/*
+  100cqi = the .card content-box width.
+  Expression = (cardWidth - 327px) / 57px
+    - 0 if the card width is 327px.  ==> use the minimum font-size.
+    - 1 if the card width is 384px.  ==> use the maximum font-size.
+*/
+.card :is(.tag, .card_date, .card_title, .card_description) {
+  --card-border-box-width: calc(100cqi + var(--card-border-inline-extra));
+
+  --card-fluid-progress: clamp(
+    0,
+    calc(
+      (var(--card-border-box-width) - var(--card-fluid-min-width)) /
+        var(--card-fluid-width-range)
+    ),
+    1
+  );
+
+  /* In the rules below (for example .tag), we specify what is --fluid-min and --fluid-max */
+  font-size: calc(
+    var(--fluid-min) + (var(--fluid-max) - var(--fluid-min)) *
+      var(--card-fluid-progress)
+  );
+}
+
+.tag {
+  --fluid-min: var(--fs-tag-min);
+  --fluid-max: var(--fs-tag-max);
+}
+
+.card_date {
+  --fluid-min: var(--fs-date-min);
+  --fluid-max: var(--fs-date-max);
+}
+
+.card_title {
+  --fluid-min: var(--fs-title-min);
+  --fluid-max: var(--fs-title-max);
+}
+
+.card_description {
+  --fluid-min: var(--fs-description-min);
+  --fluid-max: var(--fs-description-max);
+}
+
+.card_author_name {
+  font-size: var(--fs-author-name);
 }
