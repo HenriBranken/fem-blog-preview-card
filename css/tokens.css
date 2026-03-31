@@ -1,49 +1,55 @@
 :root {
   /* Spacing */
-  --gap-big: 24px;
-  --gap-medium: 12px;
-  --gap-regular: 8px;
-  --gap-small: 4px;
+  --gap-big: 1.5rem;
+  --gap-medium: 0.75rem;
+  --gap-regular: 0.5rem;
+  --gap-small: 0.25rem;
+
   /* border-radii */
-  --radius-big: 20px;
-  --radius-medium: 10px;
-  --radius-regular: 4px;
+  --radius-big: 1.25rem;
+  --radius-medium: 0.625rem;
+  --radius-regular: 0.25rem;
+
   /* colors */
   --color-yellow: rgb(244, 208, 78);
   --color-dark-gray: rgb(17, 17, 17);
   --color-gray: rgb(107, 107, 107);
   --color-white: rgb(255, 255, 255);
+
   /* Typography */
   --line-height: 150%;
-  --letter-spacing: 0px;
+  --letter-spacing: 0rem;
   --font-weight-extra-bold: 800;
   --font-weight-medium: 500;
+
   /* Shadow Effects */
-  --card-shadow: 8px 8px 0px 0px rgb(0, 0, 0);
+  --card-shadow: 0.5rem 0.5rem 0rem 0rem rgb(0, 0, 0);
+
   /* card-width range used for fluid type */
-  --card-fluid-min-width: 327px; /* Where the scaling starts */
-  --card-fluid-max-width: 384px; /* Where the scaling ends */
+  --card-fluid-min-width: 20.4375rem; /* Where the scaling starts */
+  --card-fluid-max-width: 24rem; /* Where the scaling ends */
   --card-fluid-width-range: calc(
     var(--card-fluid-max-width) - var(--card-fluid-min-width)
   );
-  /* .card has 24px left + 24px right padding */
+
+  /* .card has 1.5rem left + 1.5rem right padding */
   --card-padding-inline: var(--gap-big);
   --card-border-inline-extra: calc(
-    (var(--card-padding-inline) * 2) + (1px * 2)
+    (var(--card-padding-inline) * 2) + (0.0625rem * 2)
   );
 
   /* font-size tokens */
-  --fs-tag-min: 12px;
-  --fs-tag-max: 14px;
+  --fs-tag-min: 0.75rem;
+  --fs-tag-max: 0.875rem;
 
-  --fs-date-min: 12px;
-  --fs-date-max: 14px;
+  --fs-date-min: 0.75rem;
+  --fs-date-max: 0.875rem;
 
-  --fs-title-min: 20px;
-  --fs-title-max: 24px;
+  --fs-title-min: 1.25rem;
+  --fs-title-max: 1.5rem;
 
-  --fs-description-min: 14px;
-  --fs-description-max: 16px;
+  --fs-description-min: 0.875rem;
+  --fs-description-max: 1rem;
 
-  --fs-author-name: 14px;
+  --fs-author-name: 0.875rem;
 }

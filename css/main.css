@@ -1,16 +1,14 @@
 @import url("./reset.css");
 @import url("./tokens.css");
 
-@font-face {
-  font-family: "Figtree";
-  src: url("./fonts/Figtree-VariableFont_wght.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500 800;
-  font-display: swap;
+html {
+  font-size: 100%;
 }
 
 body {
   font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
@@ -28,7 +26,7 @@ main {
 .card {
   padding: var(--gap-big);
   margin-inline: auto;
-  width: min(calc(100% - (2 * var(--gap-big))), 384px);
+  width: min(calc(100% - (2 * var(--gap-big))), 24rem);
   border-radius: var(--radius-big);
   background: var(--color-white);
   box-shadow: var(--card-shadow);
@@ -95,8 +93,8 @@ main {
 }
 
 .card_avatar {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
 }
 
@@ -106,11 +104,11 @@ main {
   bottom: 0;
   transform: translateX(-50%);
   text-align: center;
-  font-size: 11px;
+  font-size: 0.6875rem;
   width: max-content;
 }
 
-@media (max-width: 1275px) {
+@media (max-width: 79.6875rem) {
   .attribution {
     display: none;
   }
@@ -121,14 +119,14 @@ main {
 /* ========================================================================= */
 .card {
   container-type: inline-size;
-  border: 1px solid var(--color-dark-gray);
+  border: 0.0625rem solid var(--color-dark-gray);
 }
 
 /*
   100cqi = the .card content-box width.
-  Expression = (cardWidth - 327px) / 57px
-    - 0 if the card width is 327px.  ==> use the minimum font-size.
-    - 1 if the card width is 384px.  ==> use the maximum font-size.
+  Expression = (cardWidth - 20.4375rem) / 3.5625rem
+    - 0 if the card width is 20.4375rem.  ==> use the minimum font-size.
+    - 1 if the card width is 24rem.       ==> use the maximum font-size.
 */
 .card :is(.tag, .card_date, .card_title, .card_description) {
   --card-border-box-width: calc(100cqi + var(--card-border-inline-extra));
