@@ -1,0 +1,117 @@
+/* @import url("./reset.css"); */
+@import url("./tokens.css");
+
+@font-face {
+  font-family: "Figtree";
+  src: url("./fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height);
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+body {
+  font-family: "Figtree", sans-serif;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  color: var(--color-dark-gray);
+  height: 100vh;
+  background: var(--color-yellow);
+}
+
+.card {
+  padding: var(--gap-big);
+  margin: auto var(--gap-big);
+  place-content: center;
+  width: min(100%, 384px);
+  border-radius: var(--radius-big);
+  background: var(--color-white);
+  box-shadow: var(--card-shadow);
+}
+
+.hero {
+  display: block;
+  border-radius: var(--radius-medium);
+  width: 100%;
+  height: 200px;
+  margin-bottom: var(--gap-big);
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium);
+  margin: 0 auto var(--gap-big);
+}
+
+.tag {
+  display: inline-block;
+  padding: var(--gap-small) var(--gap-medium);
+  background-color: var(--color-yellow);
+  border-radius: var(--radius-regular);
+
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.card_date {
+  color: var(--color-dark-gray);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-medium);
+}
+
+.card_title {
+  font-weight: var(--font-weight-extra-bold);
+  font-size: 24px;
+}
+
+.card_description {
+  color: var(--color-gray);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.card_author {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-medium);
+  align-items: center;
+
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.card_avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
