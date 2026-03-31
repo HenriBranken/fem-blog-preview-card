@@ -98,6 +98,18 @@ main {
 
 .card_title {
   font-weight: var(--font-weight-extra-bold);
+  text-decoration: none;
+}
+
+.card_title:link,
+.card_title:visited {
+  color: var(--color-dark-gray);
+}
+
+.card_title:hover,
+.card_title:active {
+  color: var(--color-yellow);
+  cursor: pointer;
 }
 
 .card_description {
@@ -128,6 +140,12 @@ main {
   text-align: center;
   font-size: 11px;
   width: max-content;
+}
+
+@media (max-width: 1275px) {
+  .attribution {
+    display: none;
+  }
 }
 
 /* ========================================================================= */
