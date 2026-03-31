@@ -17,7 +17,6 @@ body {
   color: var(--color-dark-gray);
   min-height: 100vh;
   background: var(--color-yellow);
-  word-spacing: -0.05em;
 }
 
 main {
@@ -122,6 +121,7 @@ main {
 /* ========================================================================= */
 .card {
   container-type: inline-size;
+  border: 1px solid var(--color-dark-gray);
 }
 
 /*

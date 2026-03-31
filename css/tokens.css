@@ -28,7 +28,9 @@
   );
   /* .card has 24px left + 24px right padding */
   --card-padding-inline: var(--gap-big);
-  --card-border-inline-extra: calc(var(--card-padding-inline) * 2);
+  --card-border-inline-extra: calc(
+    (var(--card-padding-inline) * 2) + (1px * 2)
+  );
 
   /* font-size tokens */
   --fs-tag-min: 12px;
