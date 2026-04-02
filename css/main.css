@@ -24,7 +24,6 @@ main {
 }
 
 .card {
-  padding: var(--gap-big);
   margin-inline: auto;
   width: min(calc(100% - (2 * var(--gap-big))), 24rem);
   border-radius: var(--radius-big);
@@ -36,8 +35,21 @@ main {
 
 .card_link {
   display: block;
+  padding: var(--gap-big);
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+
+/* while the link has visible keyboard focus, make the title yellow. */
+.card:hover .card_title,
+.card_link:focus-visible .card_title {
+  color: var(--color-yellow);
+}
+
+.card:hover,
+.card_link:hover {
+  cursor: pointer;
 }
 
 .hero {
