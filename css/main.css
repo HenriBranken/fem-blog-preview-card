@@ -48,11 +48,6 @@ main {
   color: var(--color-yellow);
 }
 
-.card:hover,
-.card_link:hover {
-  cursor: pointer;
-}
-
 .hero {
   display: block;
   border-radius: var(--radius-medium);
@@ -95,7 +90,6 @@ main {
 
 .card_author {
   display: flex;
-  flex-direction: row;
   gap: var(--gap-medium);
   align-items: center;
 
@@ -116,6 +110,11 @@ main {
   text-align: center;
   font-size: 0.6875rem;
   width: max-content;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media (max-width: 79.6875rem) {
