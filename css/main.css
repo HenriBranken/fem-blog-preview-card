@@ -30,6 +30,14 @@ main {
   border-radius: var(--radius-big);
   background: var(--color-white);
   box-shadow: var(--card-shadow);
+  border: 0.0625rem solid var(--color-dark-gray);
+  container-type: inline-size;
+}
+
+.card_link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .hero {
@@ -117,11 +125,6 @@ main {
 /* ========================================================================= */
 /* Fluid font-size transitions */
 /* ========================================================================= */
-.card {
-  container-type: inline-size;
-  border: 0.0625rem solid var(--color-dark-gray);
-}
-
 /*
   100cqi = the .card content-box width.
   Expression = (cardWidth - 20.4375rem) / 3.5625rem
