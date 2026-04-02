@@ -1,6 +1,7 @@
 @import url("./reset.css");
 @import url("./tokens.css");
 
+/* better than hard-coding 16px.  It respects the user's browser settings. */
 html {
   font-size: 100%;
 }
