@@ -88,17 +88,6 @@ main {
   text-decoration: none;
 }
 
-.card_title:link,
-.card_title:visited {
-  color: var(--color-dark-gray);
-}
-
-.card_title:hover,
-.card_title:active {
-  color: var(--color-yellow);
-  cursor: pointer;
-}
-
 .card_description {
   color: var(--color-gray);
   font-weight: var(--font-weight-medium);
